@@ -29,8 +29,23 @@ function Delete (req, res, next) {
       }
 }
 
+function Edit(req, res, next) {
+  const idToUpdate = parseInt(req.params.id);
+  const updatedData = req.body; 
+
+  const indexToUpdate = datas.data.findIndex((item) => item.id === idToUpdate);
+
+  if (indexToUpdate !== -1) {
+    datas.data[indexToUpdate] = updatedData;
+    res.json({ message: 'Data updated successfully', data: datas.data });
+  } else {
+    res.status(404).json({ message: 'Data not found' });
+  }
+}
+
 module.exports = {
     Register,
     View,
     Delete,
+    Edit
 }

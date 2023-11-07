@@ -17,6 +17,6 @@ Routes.get('/product', (req, res) =>{
 })
 
 
-const UserRoutes = require('./users/index')
-Routes.use('/users', UserRoutes)
+const ContentRoutes = require('./content/index')
+Routes.use('/content', ContentRoutes)
 module.exports = Routes

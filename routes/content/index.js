@@ -15,7 +15,9 @@ Routes.get('/', AuthController.View)
 
 Routes.post('/add', [AuthMidlleware.bodyValidationRegister], AuthController.Register)
 
-Routes.delete('/delete/:id', AuthController.Delete)
+Routes.delete('/delete/:id', AuthController.Delete),
+
+Routes.put('/edit/:id', AuthController.Edit )
 
 
 module.exports = Routes
